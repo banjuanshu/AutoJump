@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "AutoJump",
+    "version": "1.0.3",
+    "description": "无感直达知乎，微博，简书，QQ邮箱，CSDN等无法直接跳转的外链，免去手动跳转的烦恼；同时支持拦截知乎登录弹窗。",
+    "author": "banjuanshu",
+    "icons": {
+        "48": "aessts/icon.png",
+        "128": "aessts/icon.png"
+    },
+    "homepage_url": "https://www.banjuanshu.com",
+    "browser_action": {
+        "default_icon": "aessts/icon.png"
+    },
+    "content_scripts": [{
+        "matches": ["*://link.zhihu.com/?target=*",
+            "*://t.cn/*",
+            "*://www.jianshu.com/go-wild?ac=2&url=*",
+            "*://www.zhihu.com/question/*",
+            "*://zhuanlan.zhihu.com/p/*",
+            "*://mail.qq.com/cgi-bin/readtemplate?t=safety*",
+            "*://link.csdn.net/*",
+            "*://docs.qq.com/scenario/link.html*"
+        ],
+        "js": ["src/content-script.js"]
+    }]
+}
