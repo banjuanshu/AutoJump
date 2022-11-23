@@ -36,6 +36,7 @@
         let res = urlObject.searchParams.get(field)
         return res
     }
-    url = getParams('url')
+
+    url = getParams('url') || getParams('target')
     if (url) window.location.href = url
 })()
